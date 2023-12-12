@@ -11,6 +11,9 @@ spring:
     url: jdbc:mysql:///mall_tiny?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
     password: root
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
 mybatis:
   mapper-locations:
