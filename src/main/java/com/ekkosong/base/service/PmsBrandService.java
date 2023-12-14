@@ -5,12 +5,6 @@ import com.ekkosong.base.mbg.model.PmsBrand;
 import java.util.List;
 
 public interface PmsBrandService {
-    /**
-     * 获取所有品牌
-     *
-     * @return
-     */
-    List<PmsBrand> listAllBrand();
 
     /**
      * 新增品牌
@@ -44,7 +38,7 @@ public interface PmsBrandService {
      * @param pageSize
      * @return
      */
-    List<PmsBrand> listBrand(int pageNum, int pageSize);
+    List<PmsBrand> listBrand(Integer pageNum, Integer pageSize);
 
     /**
      * 根据id获取品牌

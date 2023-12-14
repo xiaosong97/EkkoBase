@@ -16,11 +16,6 @@ public class PmsBrandServiceImpl implements PmsBrandService {
     private PmsBrandMapper brandMapper;
 
     @Override
-    public List<PmsBrand> listAllBrand() {
-        return brandMapper.selectByExample(new PmsBrandExample());
-    }
-
-    @Override
     public int createBrand(PmsBrand brand) {
         return brandMapper.insertSelective(brand);
     }
@@ -37,8 +32,10 @@ public class PmsBrandServiceImpl implements PmsBrandService {
     }
 
     @Override
-    public List<PmsBrand> listBrand(int pageNum, int pageSize) {
-        PageHelper.startPage(pageNum, pageSize);
+    public List<PmsBrand> listBrand(Integer pageNum, Integer pageSize) {
+        if (pageNum != null && pageNum > 0 && pageSize != null && pageSize > 0) {
+            PageHelper.startPage(pageNum, pageSize);
+        }
         return brandMapper.selectByExample(new PmsBrandExample());
     }
 
